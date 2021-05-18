@@ -1,5 +1,6 @@
 {% extends 'useend/main.html'%}
-{%block content%}
+
+{% block content %}
 <a href="{% url 'tasks' %}">Go Back</a>
 <form method="POST">
     {%csrf_token %}
@@ -7,4 +8,4 @@
     <input value="Delete" type="submit" />
 </form>
 
-{%endblock content%}
+{% endblock content %}
