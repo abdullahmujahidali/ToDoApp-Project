@@ -12,7 +12,7 @@ class Task(models.Model):
 
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     title = models.CharField(max_length=250)
-    description = models.TextField(null=False,blank=False)
+    description = models.CharField(max_length=250,null=False,blank=False)
     priority = models.CharField(choices=GENDER_CHOICES, max_length=128)
     complete = models.BooleanField(default=False)
     when_created = models.DateTimeField(auto_now_add=True)
@@ -24,5 +24,5 @@ class Task(models.Model):
         return self.title
 
     class Meta:
-        ordering = ['complete']
+        ordering = ['priority']
     
