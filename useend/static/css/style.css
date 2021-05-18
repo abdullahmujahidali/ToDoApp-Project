@@ -1,7 +1,6 @@
 body{
     background-color: #FAFAFA;
     font-family: 'Roboto', sans-serif;
-
 }
  .container {
     max-width: auto;
@@ -11,6 +10,7 @@ body{
     -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
     box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
 }
+
 h1,
 h2,
 h3,
@@ -24,7 +24,6 @@ h6{
 a,
 p {
     color: #4b5156
-
 }
 .header-bar {
     display: flex;
@@ -33,7 +32,6 @@ p {
     padding: 10px;
     border-radius: 5px 5px 0 0;
     background-color:#fff;
-    /* background: linear-gradient(90deg, #EEA390 0%, #EB796F 43%, #EB796F 100%); */
 }
 
 .header-bar1 {
@@ -43,7 +41,6 @@ p {
     padding: 10px;
     border-radius: 5px 5px 0 0;
     background-color:#fff;
-    /* background: linear-gradient(90deg, #EEA390 0%, #EB796F 43%, #EB796F 100%); */
 }
 
 .header-bar a {
@@ -80,9 +77,7 @@ p {
 
 }
 .task-wrapper:hover {
-
     color: white;
-    
     transform: scale(1.05); 
 }
 

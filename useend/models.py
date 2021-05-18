@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Task(models.Model):
-    3
+    
     PRIORITY_LIST = (
     ('High', 'High'),
     ('Medium', 'Medium'),
@@ -12,13 +12,11 @@ class Task(models.Model):
 
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     title = models.CharField(max_length=250)
-    description = models.CharField(max_length=250,null=False,blank=False)
     priority = models.CharField(choices=PRIORITY_LIST, max_length=128)
+    description = models.CharField(max_length=250,null=False,blank=False)
     complete = models.BooleanField(default=False)
     when_created = models.DateTimeField(auto_now_add=True)
 
-
-   
 
     def __str__(self):
         return self.title
