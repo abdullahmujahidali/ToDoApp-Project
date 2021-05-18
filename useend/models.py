@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Task(models.Model):
     3
-    GENDER_CHOICES = (
+    PRIORITY_LIST = (
     ('H', 'High'),
     ('M', 'Medium'),
     ('L','Low')
@@ -13,7 +13,7 @@ class Task(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     title = models.CharField(max_length=250)
     description = models.CharField(max_length=250,null=False,blank=False)
-    priority = models.CharField(choices=GENDER_CHOICES, max_length=128)
+    priority = models.CharField(choices=PRIORITY_LIST, max_length=128)
     complete = models.BooleanField(default=False)
     when_created = models.DateTimeField(auto_now_add=True)
 

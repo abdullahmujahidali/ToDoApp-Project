@@ -3,7 +3,7 @@
 {% load static %}
 <div class="header-bar">
     <div  >
-    <img src="{% static 'assets/to-do.png' %}">
+   <a href="{% url 'tasks' %}"> <img src="{% static 'assets/to-do.png' %}"> </a>
      
     </div>
     
@@ -15,11 +15,8 @@
 
 </div>
 
-<div class="header-bar1">
-
-</div>
-
 <div class="card-body">
+    <h1>TASK DETAILS</h1>
     <form method="POST" action="">
         {% csrf_token %}
         {{form.as_p}}

@@ -1,11 +1,15 @@
-{% extends 'useend/main.html'%}
+{% extends 'useend/registerTemplate.html'%}
 
 {% block content %}
-<a href="{% url 'tasks' %}">Go Back</a>
-<form method="POST">
-    {%csrf_token %}
-    <p>Are you sure you want to delete this task? "{{task}}"</p>
-    <input value="Delete" type="submit" />
-</form>
+
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <p>Are your sure you want to delete this task? "{{task}}"</p>
+        <input class="button" type="submit" value="Delete" />
+        <a class="button1" href="{% url 'tasks' %}">&#8592; Back</a>
+    </form>
+</div>
 
 {% endblock content %}

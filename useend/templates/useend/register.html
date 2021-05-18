@@ -1,13 +1,25 @@
-{% extends 'useend/main.html'%}
+{% extends 'useend/registerTemplate.html'%}
+{% load static %}
 {% block content %}
-<h1>Register</h1>
 
-<form method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Register">
-</form>
+<div class="header-bar">
+     <img src="{% static 'assets/to-do2.png' %}"> 
+</div>
 
-<p>Already have an account? <a href="{% url 'login' %}">Login</a> </p>
 
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
 {% endblock content %}
