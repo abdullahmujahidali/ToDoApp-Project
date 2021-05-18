@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 class Task(models.Model):
     3
     PRIORITY_LIST = (
-    ('H', 'High'),
-    ('M', 'Medium'),
-    ('L','Low')
+    ('High', 'High'),
+    ('Medium', 'Medium'),
+    ('Low','Low')
     )
 
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)

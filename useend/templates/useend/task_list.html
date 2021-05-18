@@ -34,12 +34,18 @@
             <div class="task-complete-icon"></div>
 
             <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i> 
-            <i><s>{{task.priority}}</s></i> {% else %}
+             {% else %}
             <div class="task-incomplete-icon"></div>
             <a href="{% url 'task-update' task.id %}">{{task}}</a> {% endif %}
         </div>
+
+       <div class="button1" style="margin-left:890px;"> <i>{{task.priority}}</i> </div>
+       <div style="border-left: 3px solid green;height: 28px; margin-right:0px;"></div>
         <div class="task-controls" style="margin-right:18px;">
+            <a class="delete-link" href="{% url 'task-update' task.id %}">&#9998;</a>
+            &nbsp;&nbsp;       
             <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+ 
         </div>
     </div>
 

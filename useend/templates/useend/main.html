@@ -19,16 +19,26 @@
             border-top: 1px solid #dfe4ea;
             border-bottom: 1px solid #dfe4ea;
             border-left: 1px solid #dfe4ea;
+            transition: transform .2s; 
             border-right: 1px solid #dfe4ea;
             overflow: hidden;
-            padding: 10px;
+            padding-right: 35px;
+            padding-left: 35px;
+            padding-top:15px;
+            padding-bottom:15px;
             margin-top:20px;
             margin-left: 80px;
             margin-right: 80px;
             -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-    box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+            box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
             border-spacing: 15px 50px;
     
+        }
+        .task-wrapper:hover {
+
+            color: white;
+            
+            transform: scale(1.05); 
         }
 
         .task-title {
@@ -128,6 +138,16 @@
         .button {
             border: 1px solid #EB796F;
             background-color: #FAFAFA;
+            color: #EB796F;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+          .button1 {
+            border: 1px solid red;
+            background-color: black;
             color: #EB796F;
             padding: 10px;
             font-size: 14px;
