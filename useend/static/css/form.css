@@ -20,12 +20,6 @@ body {
     width: 110px;
     margin-top: 10px;
 }
-.header-bar a {
-    color: rgb(247, 247, 247);
-    text-decoration: none;
-}
-
-
 input[type=text],
 input[type=password]{
     border: 1px solid #EB796F;

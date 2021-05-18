@@ -19,7 +19,16 @@
     <h1>TASK DETAILS</h1>
     <form method="POST" action="">
         {% csrf_token %}
-        {{form.as_p}}
+        <label>{{form.title.label}}</label>
+        {{form.title}}
+        <label>{{form.description.label}}</label>
+        {{form.description}}
+
+        <label>{{form.priority.label}} (Low, Medium, High):</label>
+        {{form.priority}}
+        <label>{{form.complete.label}}</label>
+        {{form.complete}}
+        <br/>
         <input class="button" type="submit" value="Submit">
         <a class="button1" href="{% url 'tasks' %}">&#8592; Back</a>
     </form>
