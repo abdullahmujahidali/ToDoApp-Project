@@ -13,7 +13,7 @@
         <th>Item</th>
         <th></th>
      </tr>
-     {% for task in  todoTasks%}
+     {% for task in  tasks%}
     <tr>
         <td>{{task.title}}</td>
         <td><a href="{% url 'task' task.id %}">View</a></td>
