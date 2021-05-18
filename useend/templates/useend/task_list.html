@@ -1,13 +1,31 @@
-{% if request.user.is_authenticated %}
-    <p>{{request.user}}</p>
-    <a href="{% url 'logout' %}">Logout</a> 
-{% else %}
-    <a href="{% url 'login' %}">Login</a> 
-{% endif %}
+{% extends 'useend/main.html'%}
+{% load static%}
+{%block content%}
+
+<div class="header-bar">
+    <div  >
+    <img src="{% static 'assets/to-do.png' %}">
+     
+    </div>
+    
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}">Logout</a> 
+    {% else %}
+        <a href="{% url 'login' %}">Login</a> 
+    {% endif %}
+
+</div>
 
 <hr>
-<h1>My To Do List  </h1>
-<a href="{% url 'task-create' %}">Add Task</a>
+<div id="outer" style="width:100%; text-align:center;">
+  <div class="inner"><button type="submit" class="msgBtn" onClick="return false;" >Save</button></div>
+  <div class="inner"><button type="submit" class="msgBtn2" onClick="return false;">Publish</button></div>
+  <div class="inner"><button class="msgBtnBack">Back</button></div>
+</div>
+   <h1>Welcome {{request.user | title}} to your to-do list!</h1>
+      <h3 style="margin:0">You have <i>{{count}}</i> incomplete task{{ count|pluralize:"s" }}</h3>
+<h1>My To Do List  </h1> <a href="{% url 'task-create' %}">Add Task</a>
+
 
 <form method="GET">
     <input type="text" name="search-area" value="{{search_input}}">
@@ -30,3 +48,5 @@
         <h3>No items in the list</h3>
      {% endfor %}
 </table>
+
+{%endblock content%}
