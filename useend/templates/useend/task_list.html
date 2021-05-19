@@ -1,8 +1,8 @@
 {% extends 'useend/main.html' %}
 {% load static %}
 {% block content %}
-<div class="header-bar">
-    <div  >
+<div class="header-bar" style="padding-top:15px;">
+    <div style="margin-left: 35px;"  >
         <a href="{% url 'tasks' %}"> <img src="{% static 'assets/to-do.png' %}"> </a>
     </div>
     {% if request.user.is_authenticated %}
@@ -18,12 +18,13 @@
 </div>
     <h3 class="extraP">There are <i>{{count}}</i> pending task{{ count|pluralize:"s" }} !</h3>
 <div id="search-add-wrapper">
-    <h2 >Current List  </h2> 
+    <h1 style="margin-left:70px; font-weight:bolder;">CURRENT LIST  </h1> 
     <form method="GET" class="formStyle">
         <input type='text' name='search-area' value="{{search_input}}">
-        <input class="button" type="submit" value='Search'>
+        &nbsp;
+        <input class="button1" type="submit" value='Search'>
     </form>
-    <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
+    <a id="add-link" style="margin-right:70px;" href="{% url 'task-create' %}">&#x2b;</a>
 </div>
 
 
@@ -39,9 +40,24 @@
             <a href="{% url 'task-update' task.id %}">{{task}}</a> {% endif %}
         </div>
     &nbsp;
-       <div class="button1 spacer" > <i>{{task.priority}}</i> </div>
+       {% if task.priority == 'High' %}
+       <div class="button5 spacer" > 
+
+       {{task.priority}}
+        </div>
+        {% elif task.priority == 'Medium' %}
+        <div class="button3 spacer" > 
+       {{task.priority}}
+        </div>
+        {% else %}
+        <div class="button2 spacer" > 
+       {{task.priority}}
+        </div>
+        {% endif %}
+
+        
        <div class= "presser"></div>
-        <div class="task-controls" style="margin-right:18px;">
+        <div class="task-controls mrFix">
             <a class="delete-link" href="{% url 'task-update' task.id %}">&#9998;</a>
             &nbsp;&nbsp;       
             <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
@@ -53,7 +69,7 @@
     <h3 style="padding: 15px;">No items in list</h3>
     {% endfor %}
 </div>
-    <h3 style="padding: 15px; color:white">No items in list</h3>
+    <h3 class="borderCheck"></h3>
 
 
 {% endblock content %}

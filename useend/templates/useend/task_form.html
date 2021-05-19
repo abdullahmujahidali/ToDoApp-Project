@@ -1,32 +1,24 @@
-{% extends 'useend/main.html'%}
+{% extends 'useend/registerTemplate.html'%}
 {% block content %}
 {% load static %}
 <div class="header-bar">
     <div  >
-   <a href="{% url 'tasks' %}"> <img src="{% static 'assets/to-do.png' %}"> </a>
-     
+   <a href="{% url 'tasks' %}"> <img src="{% static 'assets/to-do2.png' %}"> </a>
     </div>
-    
-    {% if request.user.is_authenticated %}
-        <a href="{% url 'logout' %}">Logout</a> 
-    {% else %}
-        <a href="{% url 'login' %}">Login</a> 
-    {% endif %}
-
 </div>
 
 <div class="card-body">
-    <h1>TASK DETAILS</h1>
+    <h1 style="text-align:center;">ENTER DETAILS</h1>
     <form method="POST" action="">
         {% csrf_token %}
-        <label>{{form.title.label}}</label>
+        <label class="labelCheck">{{form.title.label}}</label>
         {{form.title}}
-        <label>{{form.description.label}}</label>
+        <label class="labelCheck">{{form.description.label}}</label>
         {{form.description}}
 
-        <label>{{form.priority.label}} (Low, Medium, High):</label>
+        <label class="labelCheck">{{form.priority.label}} (Low, Medium, High):</label>
         {{form.priority}}
-        <label>{{form.complete.label}}</label>
+        <label class="labelCheck">{{form.complete.label}}</label>
         {{form.complete}}
         <br/>
         <input class="button" type="submit" value="Submit">
