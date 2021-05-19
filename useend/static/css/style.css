@@ -157,6 +157,7 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    padding-left: 0px;
 }
 .btnTask{
     display:inline-block;
@@ -191,12 +192,24 @@ input[type=password]{
     padding: 10px;
     width: 90%;
 }
+.headerMain{
+    padding-top:15px;
+}
+.subLink{
+    margin-right:70px;
+}
+.noItem{
+    padding: 15px;
+}
 .extraG{
     padding-left:70px; 
     display:inline-block;
 }
 .formStyle{
     display: flex;
+}
+.headerLogo{
+    margin-left: 35px;
 }
 .spacer{
     margin-left:70%;
@@ -225,6 +238,17 @@ label {
     cursor: pointer;
     text-decoration: none;
 }
+.button6 {
+    border: 1px solid #EB796F;
+    background-color: blueviolet;
+    color: white;
+    padding: 10px;
+    margin-left: 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
   .button1 {
     border: 1px solid red;
     background-color: black;
@@ -238,7 +262,7 @@ label {
 
 
 .button2 {
-    border: 1px solid black;
+    border: 1px solid blueviolet;
     background-color: blueviolet;
     color: white;
     padding: 10px;
@@ -252,7 +276,7 @@ label {
 }
 
 .button3 {
-    border: 1px solid black;
+    border: 1px solid yellow;
     background-color: yellow;
     color: black;
     padding: 10px;
@@ -265,7 +289,7 @@ label {
     text-decoration: none;
 }
 .button5 {
-    border: 1px solid black;
+    border: 1px solid red;
     background-color: red;
     color: white;
     text-align:center;
@@ -278,7 +302,22 @@ label {
     text-decoration: none;
 }
 
+.headC{
+    margin-left:70px; 
+    font-weight:bolder;
+    font-family: 'Roboto', sans-serif;
 
+}
+.blinking{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: red; }
+    99%{    color:red;  }
+    100%{   color: #000;    }
+}
 .card-body {
     padding: 20px;
 }

@@ -43,6 +43,13 @@ label {
     cursor: pointer;
     text-decoration: none;
 }
+.centerItem{
+    text-align:center;
+}
+.taskDetailsHead{
+    font-weight:bold; 
+    text-align:center;
+}
 .button2 {
     border: 1px solid #428bca;
     background-color: #428bca;
@@ -52,7 +59,6 @@ label {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-
 }
 .labelCheck{
     font-weight: bolder;
