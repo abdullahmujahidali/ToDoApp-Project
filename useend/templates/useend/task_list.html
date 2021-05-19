@@ -13,23 +13,19 @@
 </div>
 
 <div id="outer" style="width:100%;">
-   <h2 clas="inner" style=" padding-left:25px; display:inline-block;">Welcome {{request.user | title}} to your to-do list!</h2>
-  <div class="inner" style="display:inline-block;text-align:right; float:right;"><button style="background-color: #000;border: none;color: white;padding: 16px 32px;text-align: center;font-size: 16px;opacity: 0.6;transition: 0.3s;display: inline-block;text-decoration: none;cursor: pointer; margin-top:5px; margin-right: 20px;border-radius:25px;"> <a style="text-decoration:none; color:white;" href="{% url 'task-create' %}">Add Task</a></button></div>
+   <h2 class="inner extraG">Welcome {{request.user | title}} to your to-do list!</h2>
+  <div class="inner btnTask"><button  class="subBtnAdd"> <a class="addTask" href="{% url 'task-create' %}">Add Task</a></button></div>
 </div>
-    <h3 style="margin-left:50px; margin-top:0px;">There are <i>{{count}}</i> pending tasks!{{ count|pluralize:"s" }}</h3>
+    <h3 class="extraP">There are <i>{{count}}</i> pending task{{ count|pluralize:"s" }} !</h3>
 <div id="search-add-wrapper">
-    <h2>Current List  </h2> 
-    <form method="GET" style="display: flex;">
+    <h2 >Current List  </h2> 
+    <form method="GET" class="formStyle">
         <input type='text' name='search-area' value="{{search_input}}">
         <input class="button" type="submit" value='Search'>
     </form>
     <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
 </div>
 
-<form style="display: none;" id="reorderForm" method="post" action="{% url 'task-reorder' %}">
-    {% csrf_token %}
-    <input type="hidden" id="positionInput" name="position">
-</form>
 
 <div id="tasklist" class="task-items-wrapper" >
     {% for task in tasks %}
@@ -37,15 +33,14 @@
         <div class="task-title" >
             {% if task.complete %}
             <div class="task-complete-icon"></div>
-
-            <i><s><a href="{% url 'task-update' task.id %}">{{task}}</a></s></i> 
+            <i><s><a href="{% url 'task' task.id %}">{{task}}</a></s></i> 
              {% else %}
             <div class="task-incomplete-icon"></div>
             <a href="{% url 'task-update' task.id %}">{{task}}</a> {% endif %}
         </div>
-
-       <div class="button1" style="margin-left:890px;"> <i>{{task.priority}}</i> </div>
-       <div style="border-left: 3px solid green;height: 28px; margin-right:0px;"></div>
+    &nbsp;
+       <div class="button1 spacer" > <i>{{task.priority}}</i> </div>
+       <div class= "presser"></div>
         <div class="task-controls" style="margin-right:18px;">
             <a class="delete-link" href="{% url 'task-update' task.id %}">&#9998;</a>
             &nbsp;&nbsp;       
@@ -60,29 +55,5 @@
 </div>
     <h3 style="padding: 15px; color:white">No items in list</h3>
 
-<script>
-    var taskList = document.getElementById("tasklist");
-    var reorderForm = document.getElementById("reorderForm");
-    var positionInput = document.getElementById("positionInput");
 
-    let sortable = Sortable.create(taskList, {
-        handle: '.handle',
-        ghostClass: 'dropArea',
-        chosenClass: 'selectedTask',
-
-    });
-
-    function reordering() {
-        const rows = document.getElementsByClassName("task-wrapper");
-        let pos = [];
-        for (let row of rows) {
-            pos.push(row.dataset.position);
-        }
-        console.log(pos.join(","))
-        positionInput.value = pos.join(',');
-        reorderForm.submit();
-    }
-
-    document.ondrop = reordering
-</script>
 {% endblock content %}

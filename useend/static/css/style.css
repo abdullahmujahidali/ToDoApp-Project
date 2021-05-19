@@ -144,14 +144,41 @@ p {
     font-size: 42px;
     text-shadow: 1px 1px #81413b;
 }
-
+.blockB{
+    margin-left:50px;
+    margin-top:0px;
+}
 #search-add-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
 }
-
+.btnTask{
+    display:inline-block;
+    text-align:right; 
+    float:right;
+}
+.addTask{
+    text-decoration:none; 
+    color:white;
+}
+.subBtnAdd{
+    background-color: #000;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer; 
+    margin-top:5px; 
+    margin-right: 20px;
+    border-radius:25px;
+}
 input[type=text],
 input[type=password]{
     border: 1px solid #EB796F;
@@ -159,7 +186,25 @@ input[type=password]{
     padding: 10px;
     width: 90%;
 }
-
+.extraG{
+    padding-left:10px; 
+    display:inline-block;
+}
+.formStyle{
+    display: flex;
+}
+.spacer{
+    margin-left:70%;
+}
+.presser{
+    border-left: 3px solid green;
+    height: 28px; 
+    margin-right:0px;
+}
+.extraP{
+    margin-left:10px; 
+    margin-top:0px;
+}
 label {
     padding-top: 10px !important;
     display: block;

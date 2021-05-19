@@ -1,5 +1,15 @@
-{% extends 'useend/main.html'%}
+{% extends 'useend/registerTemplate.html'%}
+{% load static %}
 {% block content %}
-<h1>Task: {{taskDetail}} </h1>
-
+<div class="header-bar">
+     <img src="{% static 'assets/to-do2.png' %}"> 
+</div>
+<div style="font-weight:bold; text-align:center;">TASK DETAILS</div>
+<div class="card-body">
+    <h3 class="boldText">Task Name: {{taskDetail}} </h3>
+    <h4 class="boldText">Task Description: {{taskDetail.description}} </h4>
+    <h5 class="boldText">Task Priority: {{taskDetail.priority}} </h5>
+    <h6 class="boldText">Task Complete (Status): {{taskDetail.complete}} </h6>
+    <a class="button" href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
 {% endblock content %}

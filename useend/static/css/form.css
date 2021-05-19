@@ -44,6 +44,17 @@ label {
     text-decoration: none;
 }
 
+.button1 {
+    border: 1px solid red;
+    background-color: black;
+    color: #EB796F;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .card-body {
     padding: 20px;
 }
